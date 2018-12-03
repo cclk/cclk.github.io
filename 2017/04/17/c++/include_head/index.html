@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://cclk.cc">
   <title>c++单一头文件全局变量导出 | cclk的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,8 @@
 <meta property="og:url" content="http://cclk.cc/2017/04/17/c++/include_head/index.html">
 <meta property="og:site_name" content="cclk的博客">
 <meta property="og:description" content="场景当我们需要提供一些简单的接口时，可能只需要提供单一头文件即可（不需要静、动态库）。但如果需要存在一些全局变量需要定义时则不好处理，本文提供一种方法，通过模版初始化的特性进行导出单一头文件的全局变量。下面介绍一些现有静、动态库定义全局变量的方法。 externextern可置于变量或者函数前，以表示变量或者函数的定义在别的文件中，提示编译器遇到此变量或函数时，在其它模块中寻找其定义。另外，ext">
-<meta property="og:updated_time" content="2018-03-23T09:16:14.178Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-17T07:13:40.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c++单一头文件全局变量导出">
 <meta name="twitter:description" content="场景当我们需要提供一些简单的接口时，可能只需要提供单一头文件即可（不需要静、动态库）。但如果需要存在一些全局变量需要定义时则不好处理，本文提供一种方法，通过模版初始化的特性进行导出单一头文件的全局变量。下面介绍一些现有静、动态库定义全局变量的方法。 externextern可置于变量或者函数前，以表示变量或者函数的定义在别的文件中，提示编译器遇到此变量或函数时，在其它模块中寻找其定义。另外，ext">
@@ -37,7 +38,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -154,7 +155,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-c++/include_head" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-c++/include_head" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -177,10 +178,10 @@
         <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>当我们需要提供一些简单的接口时，可能只需要提供单一头文件即可（不需要静、动态库）。但如果需要存在一些全局变量需要定义时则不好处理，本文提供一种方法，通过模版初始化的特性进行导出单一头文件的全局变量。下面介绍一些现有静、动态库定义全局变量的方法。</p>
 <h3 id="extern"><a href="#extern" class="headerlink" title="extern"></a>extern</h3><p>extern可置于变量或者函数前，以表示变量或者函数的定义在别的文件中，提示编译器遇到此变量或函数时，在其它模块中寻找其定义。另外，extern也可用来进行链接指定。</p>
 <h3 id="防重复定义"><a href="#防重复定义" class="headerlink" title="防重复定义"></a>防重复定义</h3><a id="more"></a>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> XXX</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> XXX</span></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> XXX</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> XXX</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 <p>这类条件编译是为了防止同一个.c文件包含同一个头文件多次。</p>
 <p>要明白每一个.c文件最后都会编译生成对应的.obj文件的。所以两个.c文件对应的两个.obj文件都会有定义的那个全局变量的，链接的时候，链接器就会发现有定义了两个同名变量，于是就报multiple definition错误。<br>正确的做法是：是其中一个.c文件定义这个变量,在另外一个.c文件用</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="keyword">int</span> g_var;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> g_var;</span><br></pre></td></tr></table></figure>
 <p>声明，这就可以在两个.c都使用这个变量了。</p>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>由于我们的需求是导出单一的头文件，就无法使用extern方法；使用防重复定义的方法后，导出后被多个cpp引用的话也是会报编译错误，所以上述方法无法解决我们的问题。</p>
 <h2 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h2><p>我们可以根据模版的特性，编译时才会生成确定对象，用以解决这个问题。</p>
@@ -191,10 +192,10 @@
 <li>要创建特例，编译器不但要看到模板的声明，还要看到模板的定义。</li>
 <li>模板实例化过程是迟钝的，即只能用函数的定义来实现实例化。</li>
 </ul>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">class</span> GlobalVar&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="keyword">static</span> T VAR;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>我们可以在一个编译单元中使用如下代码为变量赋值:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; T GlobalVar&lt;T&gt;::VAR = <span class="literal">nullptr</span>;</div></pre></td></tr></table></figure></p>
-<p>而在另一个编译单元中读取该变量：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; GlobalVar&lt;XXX&gt;::VAR &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div></pre></td></tr></table></figure></p>
-<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>上述实现只是单一参数，如果需要多个参数，可以增加模版的参数个数来进行。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">int</span> n&gt;</div><div class="line"><span class="keyword">class</span> GlobalVar&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="keyword">static</span> T VAR;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">int</span> n&gt; T GlobalVar&lt;T, <span class="number">1</span>&gt;::VAR = <span class="number">12345</span>;</div><div class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; GlobalVar&lt;<span class="keyword">int</span>, <span class="number">1</span>&gt;::VAR &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GlobalVar</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">static</span> T VAR;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我们可以在一个编译单元中使用如下代码为变量赋值:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; T GlobalVar&lt;T&gt;::VAR = <span class="literal">nullptr</span>;</span><br></pre></td></tr></table></figure></p>
+<p>而在另一个编译单元中读取该变量：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; GlobalVar&lt;XXX&gt;::VAR &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>上述实现只是单一参数，如果需要多个参数，可以增加模版的参数个数来进行。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">int</span> n&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GlobalVar</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">static</span> T VAR;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">int</span> n&gt; T GlobalVar&lt;T, <span class="number">1</span>&gt;::VAR = <span class="number">12345</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; GlobalVar&lt;<span class="keyword">int</span>, <span class="number">1</span>&gt;::VAR &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure></p>
 <h3 id="详细解释"><a href="#详细解释" class="headerlink" title="详细解释"></a>详细解释</h3><p>在这里，我们利用了C++模板的一个特性——编译器保证具有相同模板参数的模板只实例化一次。也就是说，具有相同模板参数的GlobalVar中的静态变量var只被实例化一次。此时，以上方法定义的全局变量在视觉上，不大像全局变量。但是大家可以使用宏定义等技巧来把它变得更像一点。</p>
 
       
@@ -283,18 +284,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2015/05/14/c++/open_source/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/17/c++/c++_operator/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          开源协议及常见开源软件使用的协议类型
+          c++判断类是否可用
         
       </div>
     </a>
   
   
-    <a href="/2017/04/17/c++/c++_operator/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">c++判断类是否可用</div>
+    <a href="/2015/05/14/c++/open_source/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开源协议及常见开源软件使用的协议类型</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -451,6 +452,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">音视频</a>
               </li>
              
@@ -459,19 +476,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,19 +488,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">webrtc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
               </li>
             
             <div class="clearfix"></div>
@@ -503,7 +504,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

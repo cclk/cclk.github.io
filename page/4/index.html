@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://cclk.cc">
   <title>cclk的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,6 +14,7 @@
 <meta property="og:url" content="http://cclk.cc/page/4/index.html">
 <meta property="og:site_name" content="cclk的博客">
 <meta property="og:description" content="学习笔记">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cclk的博客">
 <meta name="twitter:description" content="学习笔记">
@@ -35,7 +36,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -154,7 +155,7 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-audio-video/d3d_texture" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-audio-video/d3d_texture" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -243,7 +244,7 @@
 
 
   
-    <article id="post-audio-video/ffmpeg_text_2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-audio-video/ffmpeg_text_2" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -328,7 +329,7 @@
 
 
   
-    <article id="post-audio-video/ffmpeg_text" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-audio-video/ffmpeg_text" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -349,7 +350,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>windows下想在视频上写字， 使用Drawtext滤镜，但路径是个问题：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drawtext=<span class="string">"fontfile=/usr/share/fonts/truetype/freefont/FreeSerif.ttf: text='Test Text'"</span></div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drawtext=<span class="string">"fontfile=/usr/share/fonts/truetype/freefont/FreeSerif.ttf: text='Test Text'"</span></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2017/05/17/audio-video/ffmpeg_text/#more">more >></a>
         
@@ -413,7 +414,7 @@
 
 
   
-    <article id="post-audio-video/audio_basic" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-audio-video/audio_basic" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -494,7 +495,7 @@
 
 
   
-    <article id="post-c++/c++_mlog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-c++/c++_mlog" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -514,9 +515,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>平时在导出静态、动态库时，库内部需要写日志，如果直接依赖基础日志库，会存在基础日志库更新后，所有依赖模块都需要更新的情况。</p>
-<h2 id="设计方法"><a href="#设计方法" class="headerlink" title="设计方法"></a>设计方法</h2><p>设计简单的只提供头文件的日志库，回调给上层应用，因为接口功能会很单一，稳定后基本不会更新，减少了对log库的依赖项。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="mlog-impl-hpp"><a href="#mlog-impl-hpp" class="headerlink" title="mlog_impl.hpp"></a>mlog_impl.hpp</h3>
+        <h1 id="C-Module日志设计"><a href="#C-Module日志设计" class="headerlink" title="C++ Module日志设计"></a>C++ Module日志设计</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在程序中写日志是一件非常重要，但是很容易被开发人员忽视的地方。C++有挺多的日志库（如glog，log4cpp等），方便开发人员写日志。但一般这种log库考虑的是应用写log的方法。而C++作为轮子的制造者，迫切的需求是有一个轻量级的模块日志，方便开发人员在库内写日志。</p>
+<p>在库内写日志，一般我们使用printf、std::cout等，又或者嵌入一个log模块。当调用者需要按自己的方式写log时，这些常见的方法显得无能为力。如果存在一个log模块专为C++的导出模块设计，那么它应该具有哪些功能呢？</p>
+<h2 id="设计方法"><a href="#设计方法" class="headerlink" title="设计方法"></a>设计方法</h2><h3 id="设计前提"><a href="#设计前提" class="headerlink" title="设计前提"></a>设计前提</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">id1[sub module log]--&gt;id2[module log]</span><br><span class="line">id2--&gt;idm[application]</span><br><span class="line">id3[module log]--&gt;idm</span><br><span class="line">id4[module log]--&gt;idm</span><br></pre></td></tr></table></figure>
+<p>Module内写日志，一般有以下几个问题需要考虑：</p>
+<ul>
+<li><strong>不依赖具体log落地实现</strong>：如可以自定义输出到文件、输出到日志采集系统、输出到syslog等；还可定义如需要输出哪些log级别、插入一些traceID等；自定义输出log的格式等。</li>
+<li><strong>独立</strong>：各模块间日志插拔式设计，互不影响，可以选择只记录其中某一个或几个模块的log。</li>
+<li><strong>轻量</strong>：加入log最好不需要引入太多东西（比如需要编译，导入类等），最好是include导入就可以使用。</li>
+<li><strong>简单而易于扩展</strong>：定义好接口之后，不需要修改源码来实现log的多样化；最好是一次发布，基本不用更新。</li>
+<li><strong>能够跨语言</strong>：轮子是给各个技术栈使用，跨语言也是一个常见要求。</li>
+</ul>
+<h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><ul>
+<li><strong>只有头文件</strong>：方便直接引入，不需要额外的编译。</li>
+<li><strong>接口/功能简单灵活</strong>：定义好后，后续基本不需要改变。</li>
+<li><strong>热插拔</strong>：各模块日志独立。</li>
+</ul>
+<h3 id="实现技巧"><a href="#实现技巧" class="headerlink" title="实现技巧"></a>实现技巧</h3><ul>
+<li><strong>定义2个头文件</strong>：一个为回调定义，方便外部接入时，不需要引入mlog的具体实现。</li>
+<li><strong>接口</strong>：通过宏方式获取文件、函数等信息；通过RAII构造初始化这些信息，析构调用log回调函数，进行日志上报。</li>
+<li><strong>热插拔</strong>：不使用全局变量，而使用模版+静态变量的方法，使得各Module都有自己单独的回调函数，并且避免重复定义的问题。</li>
+<li><strong>易用</strong>：使用stream进行日志输出，避免格式化出错。</li>
+</ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2>
         
           <a class="article-more-a" href="/2017/04/17/c++/c++_mlog/#more">more >></a>
         
@@ -576,7 +597,7 @@
 
 
   
-    <article id="post-c++/c++_singleton" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-c++/c++_singleton" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -657,7 +678,7 @@
 
 
   
-    <article id="post-c++/c++_safe_map" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-c++/c++_safe_map" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -839,6 +860,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">音视频</a>
               </li>
              
@@ -847,19 +884,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -871,19 +896,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">webrtc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
               </li>
             
             <div class="clearfix"></div>
@@ -891,7 +912,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

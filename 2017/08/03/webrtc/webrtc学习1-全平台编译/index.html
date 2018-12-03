@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://cclk.cc">
   <title>webrtc学习1-全平台编译 | cclk的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,8 @@
 <meta property="og:url" content="http://cclk.cc/2017/08/03/webrtc/webrtc学习1-全平台编译/index.html">
 <meta property="og:site_name" content="cclk的博客">
 <meta property="og:description" content="一、前提因为webrtc很多依赖源是在墙外，需要翻墙工具。 二、安装depot tools是一套脚本，用于管理代码签出和审查。 参考Install depot_tools Windows git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git 设置depot_tools到PATH环境变量  Linux（A">
-<meta property="og:updated_time" content="2018-03-23T09:16:14.183Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-17T07:13:39.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webrtc学习1-全平台编译">
 <meta name="twitter:description" content="一、前提因为webrtc很多依赖源是在墙外，需要翻墙工具。 二、安装depot tools是一套脚本，用于管理代码签出和审查。 参考Install depot_tools Windows git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git 设置depot_tools到PATH环境变量  Linux（A">
@@ -37,7 +38,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -154,7 +155,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-webrtc/webrtc学习1-全平台编译" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-webrtc/webrtc学习1-全平台编译" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -176,13 +177,13 @@
       
         <h2 id="一、前提"><a href="#一、前提" class="headerlink" title="一、前提"></a>一、前提</h2><p>因为webrtc很多依赖源是在墙外，需要翻墙工具。</p>
 <h2 id="二、安装depot-tools"><a href="#二、安装depot-tools" class="headerlink" title="二、安装depot tools"></a>二、安装depot tools</h2><p>是一套脚本，用于管理代码签出和审查。</p>
-<p>参考<a href="http://dev.chromium.org/developers/how-tos/install-depot-tools" target="_blank" rel="external">Install depot_tools</a></p>
+<p>参考<a href="http://dev.chromium.org/developers/how-tos/install-depot-tools" target="_blank" rel="noopener">Install depot_tools</a></p>
 <h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><ul>
-<li>git clone <a href="https://chromium.googlesource.com/chromium/tools/depot_tools.git" target="_blank" rel="external">https://chromium.googlesource.com/chromium/tools/depot_tools.git</a></li>
+<li>git clone <a href="https://chromium.googlesource.com/chromium/tools/depot_tools.git" target="_blank" rel="noopener">https://chromium.googlesource.com/chromium/tools/depot_tools.git</a></li>
 <li>设置depot_tools到PATH环境变量</li>
 </ul>
 <h3 id="Linux（Android）-Mac（iOS）"><a href="#Linux（Android）-Mac（iOS）" class="headerlink" title="Linux（Android）/Mac（iOS）"></a>Linux（Android）/Mac（iOS）</h3><ul>
-<li>git clone <a href="https://chromium.googlesource.com/chromium/tools/depot_tools.git" target="_blank" rel="external">https://chromium.googlesource.com/chromium/tools/depot_tools.git</a></li>
+<li>git clone <a href="https://chromium.googlesource.com/chromium/tools/depot_tools.git" target="_blank" rel="noopener">https://chromium.googlesource.com/chromium/tools/depot_tools.git</a></li>
 <li>把depot_tools目录加入PATH：export PATH=<code>pwd</code>/depot_tools:”$PATH”</li>
 </ul>
 <a id="more"></a>
@@ -200,47 +201,47 @@
 <li>参考后面</li>
 </ul>
 <h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><ul>
-<li>安装Java OpenJDK<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install openjdk-7-jdk</div><div class="line">$ sudo update-alternatives --config javac</div><div class="line">$ sudo update-alternatives --config Java</div><div class="line">$ sudo update-alternatives --config javaws</div><div class="line">$ sudo update-alternatives --config javap</div><div class="line">$ sudo update-alternatives --config jar</div><div class="line">$ sudo update-alternatives --config jarsigner</div></pre></td></tr></table></figure>
+<li>安装Java OpenJDK<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install openjdk-7-jdk</span><br><span class="line">$ sudo update-alternatives --config javac</span><br><span class="line">$ sudo update-alternatives --config Java</span><br><span class="line">$ sudo update-alternatives --config javaws</span><br><span class="line">$ sudo update-alternatives --config javap</span><br><span class="line">$ sudo update-alternatives --config jar</span><br><span class="line">$ sudo update-alternatives --config jarsigner</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="Mac（IOS）"><a href="#Mac（IOS）" class="headerlink" title="Mac（IOS）"></a>Mac（IOS）</h3><ul>
 <li>安装最新XCode</li>
 </ul>
-<h2 id="四、同步源码"><a href="#四、同步源码" class="headerlink" title="四、同步源码"></a>四、同步源码</h2><p>参考<a href="https://webrtc.org/native-code/development/" target="_blank" rel="external">Native Code Development</a></p>
-<p>先创建源码目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir webrtc-checkout</div><div class="line"><span class="built_in">cd</span> webrtc-checkout</div></pre></td></tr></table></figure></p>
-<h3 id="Windows-2"><a href="#Windows-2" class="headerlink" title="Windows"></a>Windows</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">fetch --nohooks webrtc <span class="comment">#第一次拉去时使用，后续更新不需要</span></div><div class="line">gclient sync</div></pre></td></tr></table></figure>
-<h3 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> GYP_DEFINES=<span class="string">"OS=linux"</span></div><div class="line">fetch --nohooks webrtc_android</div><div class="line">gclient sync</div><div class="line"></div><div class="line"><span class="built_in">cd</span> src</div><div class="line">./build/install-build-deps.sh</div></pre></td></tr></table></figure>
-<h3 id="Android-1"><a href="#Android-1" class="headerlink" title="Android"></a>Android</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> GYP_DEFINES=<span class="string">"OS=android"</span></div><div class="line">fetch --nohooks webrtc_android</div><div class="line">gclient sync</div><div class="line"></div><div class="line"><span class="built_in">cd</span> src</div><div class="line">. build/install-build-deps-android.sh</div></pre></td></tr></table></figure>
-<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> GYP_DEFINES=<span class="string">"OS=mac"</span></div><div class="line">fetch --nohooks webrtc_ios</div><div class="line">gclient sync</div></pre></td></tr></table></figure>
-<h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> GYP_DEFINES=<span class="string">"OS=ios"</span></div><div class="line">fetch --nohooks webrtc_ios</div><div class="line">gclient sync</div></pre></td></tr></table></figure>
-<h2 id="五、Working-with-Release-Branches"><a href="#五、Working-with-Release-Branches" class="headerlink" title="五、Working with Release Branches"></a>五、Working with Release Branches</h2><p>To see available release branches, run:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -r</div></pre></td></tr></table></figure></p>
+<h2 id="四、同步源码"><a href="#四、同步源码" class="headerlink" title="四、同步源码"></a>四、同步源码</h2><p>参考<a href="https://webrtc.org/native-code/development/" target="_blank" rel="noopener">Native Code Development</a></p>
+<p>先创建源码目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir webrtc-checkout</span><br><span class="line"><span class="built_in">cd</span> webrtc-checkout</span><br></pre></td></tr></table></figure></p>
+<h3 id="Windows-2"><a href="#Windows-2" class="headerlink" title="Windows"></a>Windows</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fetch --nohooks webrtc <span class="comment">#第一次拉去时使用，后续更新不需要</span></span><br><span class="line">gclient sync</span><br></pre></td></tr></table></figure>
+<h3 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GYP_DEFINES=<span class="string">"OS=linux"</span></span><br><span class="line">fetch --nohooks webrtc_android</span><br><span class="line">gclient sync</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> src</span><br><span class="line">./build/install-build-deps.sh</span><br></pre></td></tr></table></figure>
+<h3 id="Android-1"><a href="#Android-1" class="headerlink" title="Android"></a>Android</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GYP_DEFINES=<span class="string">"OS=android"</span></span><br><span class="line">fetch --nohooks webrtc_android</span><br><span class="line">gclient sync</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> src</span><br><span class="line">. build/install-build-deps-android.sh</span><br></pre></td></tr></table></figure>
+<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GYP_DEFINES=<span class="string">"OS=mac"</span></span><br><span class="line">fetch --nohooks webrtc_ios</span><br><span class="line">gclient sync</span><br></pre></td></tr></table></figure>
+<h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GYP_DEFINES=<span class="string">"OS=ios"</span></span><br><span class="line">fetch --nohooks webrtc_ios</span><br><span class="line">gclient sync</span><br></pre></td></tr></table></figure>
+<h2 id="五、Working-with-Release-Branches"><a href="#五、Working-with-Release-Branches" class="headerlink" title="五、Working with Release Branches"></a>五、Working with Release Branches</h2><p>To see available release branches, run:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure></p>
 <p><strong>NOTICE</strong>: If you only see your local branches, you have a checkout created before our switch to Git (March 24, 2015). In that case, first run:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /path/to/webrtc/src</div><div class="line">gclient sync --with_branch_heads</div><div class="line">git fetch origin</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/webrtc/src</span><br><span class="line">gclient sync --with_branch_heads</span><br><span class="line">git fetch origin</span><br></pre></td></tr></table></figure>
 <p>You should now have an entry like this under [remote “origin”] in .git/config:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fetch = +refs/branch-heads/*:refs/remotes/branch-heads/*</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fetch = +refs/branch-heads/*:refs/remotes/branch-heads/*</span><br></pre></td></tr></table></figure>
 <p>To create a local branch tracking a remote release branch (in this example, the 43 branch):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout -b my_branch refs/remotes/branch-heads/43</div><div class="line">gclient sync</div></pre></td></tr></table></figure>
-<h2 id="六、编译"><a href="#六、编译" class="headerlink" title="六、编译"></a>六、编译</h2><h3 id="生成ninjia项目"><a href="#生成ninjia项目" class="headerlink" title="生成ninjia项目"></a>生成ninjia项目</h3><h4 id="Windows-Linux"><a href="#Windows-Linux" class="headerlink" title="Windows/Linux"></a>Windows/Linux</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#生成debug版ninja项目文件：</span></div><div class="line">gn gen out/Default</div><div class="line"><span class="comment">#生成release版ninja项目文件：</span></div><div class="line">gn gen out/Default --args=<span class="string">'is_debug=false'</span></div><div class="line"><span class="comment">#清空ninja项目文件：</span></div><div class="line">gn clean out/Default</div></pre></td></tr></table></figure>
-<h4 id="Android-2"><a href="#Android-2" class="headerlink" title="Android"></a>Android</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#使用gn生成:</span></div><div class="line">gn gen out/Default --args=<span class="string">'target_os="android" target_cpu="arm"'</span></div><div class="line"><span class="comment">#生成ARM64版：</span></div><div class="line">gn gen out/Default --args=<span class="string">'target_os="android" target_cpu="arm64"'</span></div><div class="line"><span class="comment">#生成32位 x86版：</span></div><div class="line">gn gen out/Default --args=<span class="string">'target_os="android" target_cpu="x86"'</span></div><div class="line"><span class="comment">#生成64位 x64版：</span></div><div class="line">gn gen out/Default --args=<span class="string">'target_os="android" target_cpu="x64"'</span></div></pre></td></tr></table></figure>
-<h4 id="Mac-1"><a href="#Mac-1" class="headerlink" title="Mac"></a>Mac</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#使用gn生成：</span></div><div class="line">gn gen out/Debug-mac --args=<span class="string">'target_os="mac" target_cpu="x64" is_component_build=false'</span></div></pre></td></tr></table></figure>
-<h4 id="IOS-1"><a href="#IOS-1" class="headerlink" title="IOS"></a>IOS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#生成ARM版：</span></div><div class="line">gn gen out/Debug-device-arm32 --args=<span class="string">'target_os="ios" target_cpu="arm" is_component_build=false'</span></div><div class="line"><span class="comment">#生成ARM64版：</span></div><div class="line">gn gen out/Debug-device-arm64 --args=<span class="string">'target_os="ios" target_cpu="arm64" is_component_build=false'</span></div><div class="line"><span class="comment">#生成32位模拟器版：</span></div><div class="line">gn gen out/Debug-sim32 --args=<span class="string">'target_os="ios" target_cpu="x86" is_component_build=false'</span></div><div class="line"><span class="comment">#生成64位模拟器版：</span></div><div class="line">gn gen out/Debug-sim64 --args=<span class="string">'target_os="ios" target_cpu="x64" is_component_build=false'</span></div></pre></td></tr></table></figure>
-<h3 id="编译源码"><a href="#编译源码" class="headerlink" title="编译源码"></a>编译源码</h3><h4 id="Windows-Linux-Android-Mac-IOS"><a href="#Windows-Linux-Android-Mac-IOS" class="headerlink" title="Windows/Linux/Android/Mac/IOS"></a>Windows/Linux/Android/Mac/IOS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ninja -C out/Default</div></pre></td></tr></table></figure>
-<h2 id="七、备注"><a href="#七、备注" class="headerlink" title="七、备注"></a>七、备注</h2><h3 id="windows编译脚本备份"><a href="#windows编译脚本备份" class="headerlink" title="windows编译脚本备份"></a>windows编译脚本备份</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">set</span> DEPOT_TOOLS_WIN_TOOLCHAIN=0</div><div class="line"></div><div class="line">mkdir webrtc-checkout</div><div class="line"><span class="built_in">cd</span> webrtc-checkout</div><div class="line"></div><div class="line">Windows:</div><div class="line">fetch --nohooks webrtc <span class="comment">#第一次</span></div><div class="line">gclient sync</div><div class="line"></div><div class="line"><span class="built_in">cd</span> src</div><div class="line"></div><div class="line"><span class="comment">#生成编译ninja项目文件：</span></div><div class="line"><span class="comment">#debug x86 MT is_component_build=true不支持:</span></div><div class="line">gn gen out/Debug <span class="string">"--args=is_debug=true target_cpu=\"x86\" "</span></div><div class="line">ninja -C out/Debug</div><div class="line"></div><div class="line"><span class="comment">#release x86 MT:</span></div><div class="line">gn gen out/Release <span class="string">"--args=is_debug=false target_cpu=\"x86\""</span></div><div class="line">ninja -C out/Release</div><div class="line"></div><div class="line"><span class="comment">#生成vs工程，x86 release MT</span></div><div class="line">gn gen out/msvc --ide=<span class="string">"vs2015"</span> <span class="string">"--args=is_debug=false target_cpu=\"x86\""</span></div><div class="line"></div><div class="line"><span class="comment">#上述生成默认mt模式</span></div></pre></td></tr></table></figure>
-<h3 id="depot-tools更新失败"><a href="#depot-tools更新失败" class="headerlink" title="depot_tools更新失败"></a>depot_tools更新失败</h3><p>出现类似如下错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Ensuring CIPD client is up-to-date</div><div class="line">GET https://chrome-infra-packages.appspot.com/_ah/api/repo/v1/instance/resolve?version=bccdb9a605037e3dd2a8a64e79e08f691a6f159d&amp;package_name=infra%2Ftools%2Fcipd%2Fwindows-amd64</div><div class="line">Failed to fetch https://chrome-infra-packages.appspot.com/_ah/api/repo/v1/instance/resolve?version=bccdb9a605037e3dd2a8a64e79e08f691a6f159d&amp;package_name=infra%2Ftools%2Fcipd%2Fwindows-amd64</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b my_branch refs/remotes/branch-heads/43</span><br><span class="line">gclient sync</span><br></pre></td></tr></table></figure>
+<h2 id="六、编译"><a href="#六、编译" class="headerlink" title="六、编译"></a>六、编译</h2><h3 id="生成ninjia项目"><a href="#生成ninjia项目" class="headerlink" title="生成ninjia项目"></a>生成ninjia项目</h3><h4 id="Windows-Linux"><a href="#Windows-Linux" class="headerlink" title="Windows/Linux"></a>Windows/Linux</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#生成debug版ninja项目文件：</span></span><br><span class="line">gn gen out/Default</span><br><span class="line"><span class="comment">#生成release版ninja项目文件：</span></span><br><span class="line">gn gen out/Default --args=<span class="string">'is_debug=false'</span></span><br><span class="line"><span class="comment">#清空ninja项目文件：</span></span><br><span class="line">gn clean out/Default</span><br></pre></td></tr></table></figure>
+<h4 id="Android-2"><a href="#Android-2" class="headerlink" title="Android"></a>Android</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用gn生成:</span></span><br><span class="line">gn gen out/Default --args=<span class="string">'target_os="android" target_cpu="arm"'</span></span><br><span class="line"><span class="comment">#生成ARM64版：</span></span><br><span class="line">gn gen out/Default --args=<span class="string">'target_os="android" target_cpu="arm64"'</span></span><br><span class="line"><span class="comment">#生成32位 x86版：</span></span><br><span class="line">gn gen out/Default --args=<span class="string">'target_os="android" target_cpu="x86"'</span></span><br><span class="line"><span class="comment">#生成64位 x64版：</span></span><br><span class="line">gn gen out/Default --args=<span class="string">'target_os="android" target_cpu="x64"'</span></span><br></pre></td></tr></table></figure>
+<h4 id="Mac-1"><a href="#Mac-1" class="headerlink" title="Mac"></a>Mac</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用gn生成：</span></span><br><span class="line">gn gen out/Debug-mac --args=<span class="string">'target_os="mac" target_cpu="x64" is_component_build=false'</span></span><br></pre></td></tr></table></figure>
+<h4 id="IOS-1"><a href="#IOS-1" class="headerlink" title="IOS"></a>IOS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#生成ARM版：</span></span><br><span class="line">gn gen out/Debug-device-arm32 --args=<span class="string">'target_os="ios" target_cpu="arm" is_component_build=false'</span></span><br><span class="line"><span class="comment">#生成ARM64版：</span></span><br><span class="line">gn gen out/Debug-device-arm64 --args=<span class="string">'target_os="ios" target_cpu="arm64" is_component_build=false'</span></span><br><span class="line"><span class="comment">#生成32位模拟器版：</span></span><br><span class="line">gn gen out/Debug-sim32 --args=<span class="string">'target_os="ios" target_cpu="x86" is_component_build=false'</span></span><br><span class="line"><span class="comment">#生成64位模拟器版：</span></span><br><span class="line">gn gen out/Debug-sim64 --args=<span class="string">'target_os="ios" target_cpu="x64" is_component_build=false'</span></span><br></pre></td></tr></table></figure>
+<h3 id="编译源码"><a href="#编译源码" class="headerlink" title="编译源码"></a>编译源码</h3><h4 id="Windows-Linux-Android-Mac-IOS"><a href="#Windows-Linux-Android-Mac-IOS" class="headerlink" title="Windows/Linux/Android/Mac/IOS"></a>Windows/Linux/Android/Mac/IOS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ninja -C out/Default</span><br></pre></td></tr></table></figure>
+<h2 id="七、备注"><a href="#七、备注" class="headerlink" title="七、备注"></a>七、备注</h2><h3 id="windows编译脚本备份"><a href="#windows编译脚本备份" class="headerlink" title="windows编译脚本备份"></a>windows编译脚本备份</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> DEPOT_TOOLS_WIN_TOOLCHAIN=0</span><br><span class="line"></span><br><span class="line">mkdir webrtc-checkout</span><br><span class="line"><span class="built_in">cd</span> webrtc-checkout</span><br><span class="line"></span><br><span class="line">Windows:</span><br><span class="line">fetch --nohooks webrtc <span class="comment">#第一次</span></span><br><span class="line">gclient sync</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> src</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成编译ninja项目文件：</span></span><br><span class="line"><span class="comment">#debug x86 MT is_component_build=true不支持:</span></span><br><span class="line">gn gen out/Debug <span class="string">"--args=is_debug=true target_cpu=\"x86\" "</span></span><br><span class="line">ninja -C out/Debug</span><br><span class="line"></span><br><span class="line"><span class="comment">#release x86 MT:</span></span><br><span class="line">gn gen out/Release <span class="string">"--args=is_debug=false target_cpu=\"x86\""</span></span><br><span class="line">ninja -C out/Release</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成vs工程，x86 release MT</span></span><br><span class="line">gn gen out/msvc --ide=<span class="string">"vs2015"</span> <span class="string">"--args=is_debug=false target_cpu=\"x86\""</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#上述生成默认mt模式</span></span><br></pre></td></tr></table></figure>
+<h3 id="depot-tools更新失败"><a href="#depot-tools更新失败" class="headerlink" title="depot_tools更新失败"></a>depot_tools更新失败</h3><p>出现类似如下错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ensuring CIPD client is up-to-date</span><br><span class="line">GET https://chrome-infra-packages.appspot.com/_ah/api/repo/v1/instance/resolve?version=bccdb9a605037e3dd2a8a64e79e08f691a6f159d&amp;package_name=infra%2Ftools%2Fcipd%2Fwindows-amd64</span><br><span class="line">Failed to fetch https://chrome-infra-packages.appspot.com/_ah/api/repo/v1/instance/resolve?version=bccdb9a605037e3dd2a8a64e79e08f691a6f159d&amp;package_name=infra%2Ftools%2Fcipd%2Fwindows-amd64</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>开启ShadowSocket</li>
-<li><p>访问<a href="https://chrome-infra-packages.appspot.com/_ah/api/repo/v1/instance/resolve?package_name=infra%2Ftools%2Fluci%2Fvpython%2Fwindows-amd64&amp;version=git_revision%3A5cf65fdf804a9b3f3023f79d5b3cab2a88ccd09e" target="_blank" rel="external">URL</a><br>返回如下内容表示可以正常翻墙</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="attr">"status"</span>: <span class="string">"SUCCESS"</span>,</div><div class="line"> <span class="attr">"instance_id"</span>: <span class="string">"d8a0231b483ecdf618cbfd191ea2dd49c0f9b726"</span>,</div><div class="line"> <span class="attr">"kind"</span>: <span class="string">"repo#resourcesItem"</span>,</div><div class="line"> <span class="attr">"etag"</span>: <span class="string">"\"pR8slN9LauG_o1VyIXSmbfx7GCI/-JA0lET_3WnwfrRbDzJz7f_ejjI\""</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>访问<a href="https://chrome-infra-packages.appspot.com/_ah/api/repo/v1/instance/resolve?package_name=infra%2Ftools%2Fluci%2Fvpython%2Fwindows-amd64&amp;version=git_revision%3A5cf65fdf804a9b3f3023f79d5b3cab2a88ccd09e" target="_blank" rel="noopener">URL</a><br>返回如下内容表示可以正常翻墙</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="attr">"status"</span>: <span class="string">"SUCCESS"</span>,</span><br><span class="line"> <span class="attr">"instance_id"</span>: <span class="string">"d8a0231b483ecdf618cbfd191ea2dd49c0f9b726"</span>,</span><br><span class="line"> <span class="attr">"kind"</span>: <span class="string">"repo#resourcesItem"</span>,</span><br><span class="line"> <span class="attr">"etag"</span>: <span class="string">"\"pR8slN9LauG_o1VyIXSmbfx7GCI/-JA0lET_3WnwfrRbDzJz7f_ejjI\""</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>设置git netsh http https代理</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Git的代理设置</span></div><div class="line">git config --global http.proxy http://127.0.0.1:1080</div><div class="line">git config --global https.proxy https://127.0.0.1:1080</div><div class="line"></div><div class="line"><span class="comment">#winhttp的代理设置（需要管理员权限）</span></div><div class="line">netsh winhttp <span class="built_in">set</span> proxy 127.0.0.1:1080</div><div class="line"></div><div class="line"><span class="comment">#cipd_client代理</span></div><div class="line"><span class="built_in">set</span> HTTP_PROXY=http://127.0.0.1:1080</div><div class="line"><span class="built_in">set</span> HTTPS_PROXY=https://127.0.0.1:1080</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Git的代理设置</span></span><br><span class="line">git config --global http.proxy http://127.0.0.1:1080</span><br><span class="line">git config --global https.proxy https://127.0.0.1:1080</span><br><span class="line"></span><br><span class="line"><span class="comment">#winhttp的代理设置（需要管理员权限）</span></span><br><span class="line">netsh winhttp <span class="built_in">set</span> proxy 127.0.0.1:1080</span><br><span class="line"></span><br><span class="line"><span class="comment">#cipd_client代理</span></span><br><span class="line"><span class="built_in">set</span> HTTP_PROXY=http://127.0.0.1:1080</span><br><span class="line"><span class="built_in">set</span> HTTPS_PROXY=https://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>还原代理</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">git config --global --unset http.proxy</div><div class="line">git config --global --unset https.proxy</div><div class="line"></div><div class="line">netsh winhttp reset proxy</div><div class="line">netsh winhttp show proxy</div><div class="line"></div><div class="line"><span class="built_in">set</span> HTTP_PROXY=</div><div class="line"><span class="built_in">set</span> HTTPS_PROXY=</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line">netsh winhttp reset proxy</span><br><span class="line">netsh winhttp show proxy</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> HTTP_PROXY=</span><br><span class="line"><span class="built_in">set</span> HTTPS_PROXY=</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="gclient-sync此应用无法在你电脑上运行"><a href="#gclient-sync此应用无法在你电脑上运行" class="headerlink" title="gclient sync此应用无法在你电脑上运行"></a>gclient sync此应用无法在你电脑上运行</h3><p>原因是.cipd_client.exe下载错误，删除depot_tools下缓存的.cipd_client.exe文件，重新执行gclient sync。</p>
-<h3 id="gn"><a href="#gn" class="headerlink" title="gn"></a>gn</h3><p>参考<a href="https://www.chromium.org/developers/gn-build-configuration" target="_blank" rel="external">gn</a></p>
+<h3 id="gn"><a href="#gn" class="headerlink" title="gn"></a>gn</h3><p>参考<a href="https://www.chromium.org/developers/gn-build-configuration" target="_blank" rel="noopener">gn</a></p>
 
       
 
@@ -332,18 +333,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/05/18/c++/Proactor/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/12/audio-video/rgb-yuv/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Proactor
+          RGB,YUV
         
       </div>
     </a>
   
   
-    <a href="/2017/08/12/audio-video/rgb-yuv/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">RGB,YUV</div>
+    <a href="/2017/05/18/c++/Proactor/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Proactor</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -500,6 +501,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">音视频</a>
               </li>
              
@@ -508,19 +525,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,19 +537,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">webrtc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
               </li>
             
             <div class="clearfix"></div>
@@ -552,7 +553,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

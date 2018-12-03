@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://cclk.cc">
   <title>webrtc学习2-音频预处理模块 | cclk的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,8 @@
 <meta property="og:url" content="http://cclk.cc/2017/08/14/webrtc/webrtc学习2-音频预处理模块/index.html">
 <meta property="og:site_name" content="cclk的博客">
 <meta property="og:description" content="VoiceEngineWebRtc中VoiceEngine(VoE)可以完成大部分的VOIP相关任务，包括采集、自动增益、噪声消除、回声抑制、编解码、RTP传输。 APM对于非webrtc的项目，如果需要用到webrtc中的音频算法处理模块，可以使用仅次于VoE层级的模块APM（Audio Preprocessing Module），一个纯粹的音频预处理单元。 源码APM的整体编译需要WebRTC">
-<meta property="og:updated_time" content="2018-03-23T09:16:14.184Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-17T07:13:38.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webrtc学习2-音频预处理模块">
 <meta name="twitter:description" content="VoiceEngineWebRtc中VoiceEngine(VoE)可以完成大部分的VOIP相关任务，包括采集、自动增益、噪声消除、回声抑制、编解码、RTP传输。 APM对于非webrtc的项目，如果需要用到webrtc中的音频算法处理模块，可以使用仅次于VoE层级的模块APM（Audio Preprocessing Module），一个纯粹的音频预处理单元。 源码APM的整体编译需要WebRTC">
@@ -37,7 +38,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -154,7 +155,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-webrtc/webrtc学习2-音频预处理模块" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-webrtc/webrtc学习2-音频预处理模块" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -226,15 +227,15 @@
 <li>如果采样率是8K，则对应8000/1000*10=80个采样点，16K是160个采样点，32K是320个采样点。</li>
 <li>对于8000和16000采样率的音频数据在使用时可以不管高频部分，只需要传入低频数据即可，但是对于32K采样率的数据就必须通过滤波接口将数据分为高频和低频传入，传入降噪后再组合成音频数据。大于32K的音频文件就必须要通过重采样接口降频到对应的采样率再处理（旧版本方法，新版本尝试直接输入160个采样点的32K数据也可成功，但输入320个采样点则不成功）。</li>
 </ul>
-<h3 id="接口类型"><a href="#接口类型" class="headerlink" title="接口类型"></a>接口类型</h3><p>比如回声消除接口<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int32_t</span> WebRtcAec_Process(<span class="keyword">void</span>* aecInst,</div><div class="line">                          <span class="keyword">const</span> <span class="keyword">float</span>* <span class="keyword">const</span>* nearend,</div><div class="line">                          <span class="keyword">size_t</span> num_bands,</div><div class="line">                          <span class="keyword">float</span>* <span class="keyword">const</span>* out,</div><div class="line">                          <span class="keyword">size_t</span> nrOfSamples,</div><div class="line">                          <span class="keyword">int16_t</span> msInSndCardBuf,</div><div class="line">                          <span class="keyword">int32_t</span> skew);</div></pre></td></tr></table></figure></p>
+<h3 id="接口类型"><a href="#接口类型" class="headerlink" title="接口类型"></a>接口类型</h3><p>比如回声消除接口<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int32_t</span> WebRtcAec_Process(<span class="keyword">void</span>* aecInst,</span><br><span class="line">                          <span class="keyword">const</span> <span class="keyword">float</span>* <span class="keyword">const</span>* nearend,</span><br><span class="line">                          <span class="keyword">size_t</span> num_bands,</span><br><span class="line">                          <span class="keyword">float</span>* <span class="keyword">const</span>* out,</span><br><span class="line">                          <span class="keyword">size_t</span> nrOfSamples,</span><br><span class="line">                          <span class="keyword">int16_t</span> msInSndCardBuf,</span><br><span class="line">                          <span class="keyword">int32_t</span> skew);</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>webrtc接口使用类型为float类型，音频数据类型可能是short类型，网络传输类型可能是char类型，需要进行转换。</li>
 <li>webrtc接口为const float* const*，float* const*之类的，不是很常见，需要转换。</li>
 </ul>
-<h4 id="char转short-short转float"><a href="#char转short-short转float" class="headerlink" title="char转short, short转float"></a>char转short, short转float</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span>  NN 160</span></div><div class="line"></div><div class="line"><span class="keyword">char</span> far_frame_c[NN * <span class="number">2</span>] = &#123; <span class="number">0</span> &#125;;</div><div class="line"><span class="keyword">short</span> far_frame_s[NN] = &#123; <span class="number">0</span> &#125;;</div><div class="line"></div><div class="line">FILE *fp_far = fopen(<span class="string">"far.pcm"</span>, <span class="string">"rb"</span>);</div><div class="line">fread(far_frame_c, <span class="keyword">sizeof</span>(<span class="keyword">char</span>) * <span class="number">2</span>, NN, fp_far);</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; NN; ++i)</div><div class="line">&#123;</div><div class="line">    far_frame_s[i] = (far_frame_c[i * <span class="number">2</span> + <span class="number">1</span>] &lt;&lt; <span class="number">8</span>) | (far_frame_c[i * <span class="number">2</span>] &amp; <span class="number">0xFF</span>);<span class="comment">//两个char型拼成一个short</span></div><div class="line"></div><div class="line">    far_frame_f[i] = far_frame_s[i];<span class="comment">//转float型接口需要</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="float转short"><a href="#float转short" class="headerlink" title="float转short"></a>float转short</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span>  NN 160</span></div><div class="line"></div><div class="line"><span class="keyword">short</span> out_frame_s[NN] = &#123; <span class="number">0</span> &#125;;</div><div class="line"><span class="keyword">float</span> out_frame_f[NN] = &#123; <span class="number">0</span> &#125;;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; NN; ++i)</div><div class="line">&#123;</div><div class="line">    out_frame_s[i] = out_frame_f[i];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="float-转const-float-const"><a href="#float-转const-float-const" class="headerlink" title="float*转const float* const*"></a>float*转const float* const*</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span>  NN 160</span></div><div class="line"></div><div class="line"><span class="keyword">float</span> near_frame_f[NN] = &#123; <span class="number">0</span> &#125;;</div><div class="line"></div><div class="line"><span class="keyword">float</span>* <span class="keyword">const</span> p = near_frame_f;</div><div class="line"><span class="keyword">const</span> <span class="keyword">float</span>* <span class="keyword">const</span>* nearend = &amp;p;</div></pre></td></tr></table></figure>
-<h4 id="float-转float-const"><a href="#float-转float-const" class="headerlink" title="float*转float* const*"></a>float*转float* const*</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span>  NN 160</span></div><div class="line"></div><div class="line"><span class="keyword">float</span> out_frame_f[NN] = &#123; <span class="number">0</span> &#125;;</div><div class="line"></div><div class="line"><span class="keyword">float</span>* <span class="keyword">const</span> q = out_frame_f;</div><div class="line"><span class="keyword">float</span>* <span class="keyword">const</span>* out = &amp;q;</div></pre></td></tr></table></figure>
+<h4 id="char转short-short转float"><a href="#char转short-short转float" class="headerlink" title="char转short, short转float"></a>char转short, short转float</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  NN 160</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> far_frame_c[NN * <span class="number">2</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">short</span> far_frame_s[NN] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">FILE *fp_far = fopen(<span class="string">"far.pcm"</span>, <span class="string">"rb"</span>);</span><br><span class="line">fread(far_frame_c, <span class="keyword">sizeof</span>(<span class="keyword">char</span>) * <span class="number">2</span>, NN, fp_far);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; NN; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    far_frame_s[i] = (far_frame_c[i * <span class="number">2</span> + <span class="number">1</span>] &lt;&lt; <span class="number">8</span>) | (far_frame_c[i * <span class="number">2</span>] &amp; <span class="number">0xFF</span>);<span class="comment">//两个char型拼成一个short</span></span><br><span class="line"></span><br><span class="line">    far_frame_f[i] = far_frame_s[i];<span class="comment">//转float型接口需要</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="float转short"><a href="#float转short" class="headerlink" title="float转short"></a>float转short</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  NN 160</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">short</span> out_frame_s[NN] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">float</span> out_frame_f[NN] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; NN; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    out_frame_s[i] = out_frame_f[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="float-转const-float-const"><a href="#float-转const-float-const" class="headerlink" title="float*转const float* const*"></a>float*转const float* const*</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  NN 160</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">float</span> near_frame_f[NN] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">float</span>* <span class="keyword">const</span> p = near_frame_f;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">float</span>* <span class="keyword">const</span>* nearend = &amp;p;</span><br></pre></td></tr></table></figure>
+<h4 id="float-转float-const"><a href="#float-转float-const" class="headerlink" title="float*转float* const*"></a>float*转float* const*</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  NN 160</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">float</span> out_frame_f[NN] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">float</span>* <span class="keyword">const</span> q = out_frame_f;</span><br><span class="line"><span class="keyword">float</span>* <span class="keyword">const</span>* out = &amp;q;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -325,18 +326,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/12/audio-video/rgb-yuv/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/16/webrtc/webrtc学习3-回声消除/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          RGB,YUV
+          webrtc学习3-回声消除
         
       </div>
     </a>
   
   
-    <a href="/2017/08/16/webrtc/webrtc学习3-回声消除/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">webrtc学习3-回声消除</div>
+    <a href="/2017/08/12/audio-video/rgb-yuv/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RGB,YUV</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -493,6 +494,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">音视频</a>
               </li>
              
@@ -501,19 +518,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,19 +530,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">webrtc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
               </li>
             
             <div class="clearfix"></div>
@@ -545,7 +546,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

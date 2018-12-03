@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://cclk.cc">
   <title>RGB,YUV | cclk的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,6 +15,7 @@
 <meta property="og:url" content="http://cclk.cc/2017/08/12/audio-video/rgb-yuv/index.html">
 <meta property="og:site_name" content="cclk的博客">
 <meta property="og:description" content="一、RGB计算机彩色显示器显示色彩的原理与彩色电视机一样，都是采用R（Red）、G（Green）、B（Blue）相加混色的原理：通过发射出三种不同强度的电子束，使屏幕内侧覆盖的红、绿、蓝磷光材料发光而产生色彩。这种色彩的表示方法称为RGB色彩空间表示（它也是多媒体计算机技术中用得最多的一种色彩空间表示方法）。 根据三基色原理，任意一种色光F都可以用不同分量的R、G、B三色相加混合而成。F = r">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ooid5jqhw.bkt.clouddn.com/1498793693858.png">
 <meta property="og:image" content="http://ooid5jqhw.bkt.clouddn.com/1498808416643.png">
 <meta property="og:image" content="http://ooid5jqhw.bkt.clouddn.com/1498808497697.png">
@@ -24,7 +25,7 @@
 <meta property="og:image" content="http://ooid5jqhw.bkt.clouddn.com/1498786542233.png">
 <meta property="og:image" content="http://ooid5jqhw.bkt.clouddn.com/1498793286690.png">
 <meta property="og:image" content="http://ooid5jqhw.bkt.clouddn.com/1498786766086.png">
-<meta property="og:updated_time" content="2018-03-23T09:16:14.173Z">
+<meta property="og:updated_time" content="2018-09-17T07:13:41.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RGB,YUV">
 <meta name="twitter:description" content="一、RGB计算机彩色显示器显示色彩的原理与彩色电视机一样，都是采用R（Red）、G（Green）、B（Blue）相加混色的原理：通过发射出三种不同强度的电子束，使屏幕内侧覆盖的红、绿、蓝磷光材料发光而产生色彩。这种色彩的表示方法称为RGB色彩空间表示（它也是多媒体计算机技术中用得最多的一种色彩空间表示方法）。 根据三基色原理，任意一种色光F都可以用不同分量的R、G、B三色相加混合而成。F = r">
@@ -47,7 +48,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -164,7 +165,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-audio-video/rgb-yuv" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-audio-video/rgb-yuv" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -286,14 +287,14 @@
 </table>
 <h4 id="RGB1、RGB4、RGB8"><a href="#RGB1、RGB4、RGB8" class="headerlink" title="RGB1、RGB4、RGB8"></a>RGB1、RGB4、RGB8</h4><p>RGB1、RGB4、RGB8都是调色板类型的RGB格式，在描述这些媒体类型的格式细节时，通常会在BITMAPINFOHEADER数据结构后面跟着一个调色板（定义一系列颜色）。它们的图像数据并不是真正的颜色值，而是当前像素颜色值在调色板中的索引。以RGB1（2色位图）为例，比如它的调色板中定义的两种颜色值依次为0x000000（黑色）和0xFFFFFF（白色），那么图像数据001101010111…（每个像素用1位表示）表示对应各像素的颜色为：黑黑白白黑白黑白黑白白白…。</p>
 <h4 id="RGB565"><a href="#RGB565" class="headerlink" title="RGB565"></a>RGB565</h4><p> RGB565使用16位表示一个像素，这16位中的5位用于R，6位用于G，5位用于B。程序中通常使用一个字（WORD，一个字等于两个字节）来操作一个像素。当读出一个像素后，这个字的各个位意义如下：<br>| 高字节     |    低字节 |<br>| :——– | ——–:|<br>| RRRRRGGG  |  GGGBBBBB|<br>可以组合使用屏蔽字和移位操作来得到RGB各分量的值：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB565_MASK_RED    0xF800</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB565_MASK_GREEN  0x07E0</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB565_MASK_BLUE   0x001F</span></div><div class="line">R = (wPixel &amp; RGB565_MASK_RED) &gt;&gt; <span class="number">11</span>;   <span class="comment">// 取值范围0-31</span></div><div class="line">G = (wPixel &amp; RGB565_MASK_GREEN) &gt;&gt; <span class="number">5</span>;  <span class="comment">// 取值范围0-63</span></div><div class="line">B =  wPixel &amp; RGB565_MASK_BLUE;         <span class="comment">// 取值范围0-31</span></div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB565_MASK_RED    0xF800</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB565_MASK_GREEN  0x07E0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB565_MASK_BLUE   0x001F</span></span><br><span class="line">R = (wPixel &amp; RGB565_MASK_RED) &gt;&gt; <span class="number">11</span>;   <span class="comment">// 取值范围0-31</span></span><br><span class="line">G = (wPixel &amp; RGB565_MASK_GREEN) &gt;&gt; <span class="number">5</span>;  <span class="comment">// 取值范围0-63</span></span><br><span class="line">B =  wPixel &amp; RGB565_MASK_BLUE;         <span class="comment">// 取值范围0-31</span></span><br></pre></td></tr></table></figure>
 <h4 id="RGB555"><a href="#RGB555" class="headerlink" title="RGB555"></a>RGB555</h4><p>RGB555是另一种16位的RGB格式，RGB分量都用5位表示（剩下的1位不用）。使用一个字读出一个像素后，这个字的各个位意义如下（X表示不用，可以忽略）：<br>| 高字节     |    低字节 |<br>| :——– | ——–:|<br>| XRRRRRGG  |  GGGBBBBB|<br>可以组合使用屏蔽字和移位操作来得到RGB各分量的值：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB555_MASK_RED    0x7C00</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB555_MASK_GREEN  0x03E0</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB555_MASK_BLUE   0x001F</span></div><div class="line">R = (wPixel &amp; RGB555_MASK_RED) &gt;&gt; <span class="number">10</span>;   <span class="comment">// 取值范围0-31</span></div><div class="line">G = (wPixel &amp; RGB555_MASK_GREEN) &gt;&gt; <span class="number">5</span>;  <span class="comment">// 取值范围0-31</span></div><div class="line">B =  wPixel &amp; RGB555_MASK_BLUE;         <span class="comment">// 取值范围0-31</span></div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB555_MASK_RED    0x7C00</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB555_MASK_GREEN  0x03E0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RGB555_MASK_BLUE   0x001F</span></span><br><span class="line">R = (wPixel &amp; RGB555_MASK_RED) &gt;&gt; <span class="number">10</span>;   <span class="comment">// 取值范围0-31</span></span><br><span class="line">G = (wPixel &amp; RGB555_MASK_GREEN) &gt;&gt; <span class="number">5</span>;  <span class="comment">// 取值范围0-31</span></span><br><span class="line">B =  wPixel &amp; RGB555_MASK_BLUE;         <span class="comment">// 取值范围0-31</span></span><br></pre></td></tr></table></figure>
 <h4 id="RGB24"><a href="#RGB24" class="headerlink" title="RGB24"></a>RGB24</h4><p>RGB24使用24位来表示一个像素，RGB分量都用8位表示，取值范围为0-255。注意在内存中RGB各分量的排列顺序为：BGR BGR BGR…。<br>通常可以使用RGBTRIPLE数据结构来操作一个像素，它的定义为：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> tagRGBTRIPLE &#123; </div><div class="line">BYTE rgbtBlue;    <span class="comment">// 蓝色分量</span></div><div class="line">BYTE rgbtGreen;   <span class="comment">// 绿色分量</span></div><div class="line">BYTE rgbtRed;     <span class="comment">// 红色分量</span></div><div class="line">&#125; RGBTRIPLE;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagRGBTRIPLE</span> &#123;</span> </span><br><span class="line">BYTE rgbtBlue;    <span class="comment">// 蓝色分量</span></span><br><span class="line">BYTE rgbtGreen;   <span class="comment">// 绿色分量</span></span><br><span class="line">BYTE rgbtRed;     <span class="comment">// 红色分量</span></span><br><span class="line">&#125; RGBTRIPLE;</span><br></pre></td></tr></table></figure>
 <h4 id="RGB32、ARGB32"><a href="#RGB32、ARGB32" class="headerlink" title="RGB32、ARGB32"></a>RGB32、ARGB32</h4><p>使用32位来表示一个像素，RGB分量各用去8位，剩下的8位用作Alpha通道或者不用。（ARGB32就是带Alpha通道的 RGB32。）注意在内存中RGB各分量的排列顺序为：BGRA BGRABGRA…。<br>通常可以使用RGBQUAD数据结构来操作一个像素，它的定义为：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> tagRGBQUAD &#123;</div><div class="line">BYTE    rgbBlue;      <span class="comment">// 蓝色分量</span></div><div class="line">BYTE    rgbGreen;     <span class="comment">// 绿色分量</span></div><div class="line">BYTE    rgbRed;       <span class="comment">// 红色分量</span></div><div class="line">BYTE    rgbReserved;  <span class="comment">// 保留字节（用作Alpha通道或忽略）</span></div><div class="line">&#125; RGBQUAD;</div></pre></td></tr></table></figure>
-<h3 id="二、YUV"><a href="#二、YUV" class="headerlink" title="二、YUV"></a>二、YUV</h3><h4 id="关于YUV格式"><a href="#关于YUV格式" class="headerlink" title="关于YUV格式"></a>关于YUV格式</h4><p>摘自 <a href="https://zh.wikipedia.org/wiki/YUV" target="_blank" rel="external">维基百科</a>，YUV，是一种颜色编码方法。<br>YUV是编译true-color颜色空间（color space）的种类，Y’UV, YUV, YCbCr，YPbPr等专有名词都可以称为YUV，彼此有重叠。“Y”表示<strong>明亮度</strong>（Luminance、Luma），“U”和“V”则是<strong>色度、浓度</strong>（Chrominance、Chroma），Y’UV, YUV, YCbCr, YPbPr 常常有些混用的情况，其中 YUV 和 Y’UV 通常用来描述类比讯号，而相反的 YCbCr 与 YPbPr 则是用来描述数位的影像讯号，例如在一些压缩格式内 MPEG、JPEG 中，但在现今，YUV 通常已经在电脑系统上广泛使用。YUV Formats分成两个格式：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagRGBQUAD</span> &#123;</span></span><br><span class="line">BYTE    rgbBlue;      <span class="comment">// 蓝色分量</span></span><br><span class="line">BYTE    rgbGreen;     <span class="comment">// 绿色分量</span></span><br><span class="line">BYTE    rgbRed;       <span class="comment">// 红色分量</span></span><br><span class="line">BYTE    rgbReserved;  <span class="comment">// 保留字节（用作Alpha通道或忽略）</span></span><br><span class="line">&#125; RGBQUAD;</span><br></pre></td></tr></table></figure>
+<h3 id="二、YUV"><a href="#二、YUV" class="headerlink" title="二、YUV"></a>二、YUV</h3><h4 id="关于YUV格式"><a href="#关于YUV格式" class="headerlink" title="关于YUV格式"></a>关于YUV格式</h4><p>摘自 <a href="https://zh.wikipedia.org/wiki/YUV" target="_blank" rel="noopener">维基百科</a>，YUV，是一种颜色编码方法。<br>YUV是编译true-color颜色空间（color space）的种类，Y’UV, YUV, YCbCr，YPbPr等专有名词都可以称为YUV，彼此有重叠。“Y”表示<strong>明亮度</strong>（Luminance、Luma），“U”和“V”则是<strong>色度、浓度</strong>（Chrominance、Chroma），Y’UV, YUV, YCbCr, YPbPr 常常有些混用的情况，其中 YUV 和 Y’UV 通常用来描述类比讯号，而相反的 YCbCr 与 YPbPr 则是用来描述数位的影像讯号，例如在一些压缩格式内 MPEG、JPEG 中，但在现今，YUV 通常已经在电脑系统上广泛使用。YUV Formats分成两个格式：</p>
 <ul>
 <li><strong>紧缩格式（packed formats）</strong>：将Y、U、V值储存成Macro Pixels阵列，和RGB的存放方式类似。</li>
 <li><strong>平面格式（planar formats）</strong>：将Y、U、V的三个份量分别存放在不同的矩阵中。</li>
@@ -333,10 +334,10 @@
 <h4 id="YVU9"><a href="#YVU9" class="headerlink" title="YVU9"></a>YVU9</h4><p>YVU9格式为每个像素都提取Y分量，而在UV分量的提取时，首先将图像分成若干个4 x 4的宏块，然后每个宏块提取一个U分量和一个V分量。图像数据存储时，首先是整幅图像的Y分量数组，然后就跟着U分量数组，以及V分量数组。IF09格式与YVU9类似。</p>
 <h4 id="IYUV"><a href="#IYUV" class="headerlink" title="IYUV"></a>IYUV</h4><p>IYUV格式为每个像素都提取Y分量，而在UV分量的提取时，首先将图像分成若干个2 x 2的宏块，然后每个宏块提取一个U分量和一个V分量。YV12格式与IYUV类似。</p>
 <h4 id="YUV411、YUV420"><a href="#YUV411、YUV420" class="headerlink" title="YUV411、YUV420"></a>YUV411、YUV420</h4><p>YUV411、YUV420格式多见于DV数据中，前者用于NTSC制，后者用于PAL制。YUV411为每个像素都提取Y分量，而UV分量在水平方向上每4个像素采样一次。YUV420并非V分量采样为0，而是跟YUV411相比，在水平方向上提高一倍色差采样频率，在垂直方向上以U/V间隔的方式减小一半色差采样。</p>
-<h4 id="YUV转UYVY格式"><a href="#YUV转UYVY格式" class="headerlink" title="YUV转UYVY格式"></a>YUV转UYVY格式</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">YUVtoUYVY</span><span class="params">(<span class="keyword">uint8_t</span> *y_plane, <span class="keyword">uint8_t</span> *u_plane, <span class="keyword">uint8_t</span> *v_plane, </span></span></div><div class="line">			   <span class="keyword">int</span> y_stride, <span class="keyword">int</span> uv_stride,</div><div class="line">			   OUT <span class="keyword">uint8_t</span> *pDstBuf, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt; height; row = row + <span class="number">1</span>) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; width; col=col + <span class="number">2</span>)</div><div class="line">        &#123;</div><div class="line">            pDstBuf[<span class="number">0</span>] = u_plane[row/<span class="number">2</span> * uv_stride + col/<span class="number">2</span>];</div><div class="line">            pDstBuf[<span class="number">1</span>] = y_plane[row * y_stride + col];</div><div class="line">            pDstBuf[<span class="number">2</span>] = v_plane[row/<span class="number">2</span> * uv_stride + col/<span class="number">2</span>];</div><div class="line">            pDstBuf[<span class="number">3</span>] = y_plane[row * y_stride + col + <span class="number">1</span>];</div><div class="line">            pDstBuf += <span class="number">4</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="YUV转UYVY格式"><a href="#YUV转UYVY格式" class="headerlink" title="YUV转UYVY格式"></a>YUV转UYVY格式</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">YUVtoUYVY</span><span class="params">(<span class="keyword">uint8_t</span> *y_plane, <span class="keyword">uint8_t</span> *u_plane, <span class="keyword">uint8_t</span> *v_plane, </span></span></span><br><span class="line"><span class="function"><span class="params">			   <span class="keyword">int</span> y_stride, <span class="keyword">int</span> uv_stride,</span></span></span><br><span class="line"><span class="function"><span class="params">			   OUT <span class="keyword">uint8_t</span> *pDstBuf, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt; height; row = row + <span class="number">1</span>) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; width; col=col + <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            pDstBuf[<span class="number">0</span>] = u_plane[row/<span class="number">2</span> * uv_stride + col/<span class="number">2</span>];</span><br><span class="line">            pDstBuf[<span class="number">1</span>] = y_plane[row * y_stride + col];</span><br><span class="line">            pDstBuf[<span class="number">2</span>] = v_plane[row/<span class="number">2</span> * uv_stride + col/<span class="number">2</span>];</span><br><span class="line">            pDstBuf[<span class="number">3</span>] = y_plane[row * y_stride + col + <span class="number">1</span>];</span><br><span class="line">            pDstBuf += <span class="number">4</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="三、FOURCC"><a href="#三、FOURCC" class="headerlink" title="三、FOURCC"></a>三、FOURCC</h3><p>FourCC全称Four-Character Codes，代表四字符代码 (four character code), 它是一个32位的标示符，其实就是typedef unsigned int FOURCC;是一种独立标示视频数据流格式的四字符代码。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">VC++转换方法：</div><div class="line">DWORD fccYUY2 = MAKEFOURCC('Y','U','Y','2');</div><div class="line">DWORD fccYUY2 = FCC('YUY2');</div><div class="line">DWORD fccYUY2 = '2YUY';  // Declares the FOURCC 'YUY2'.</div><div class="line"></div><div class="line">GUID：</div><div class="line">FOURCCMap fccMap(FCC('YUY2'));</div><div class="line">GUID g1 = (GUID)fccMap;</div><div class="line"></div><div class="line">//Equivalent:</div><div class="line">GUID g2 = (GUID)FOURCCMap(FCC('YUY2'));</div></pre></td></tr></table></figure>
-<h4 id="FOURCC-for-YUV"><a href="#FOURCC-for-YUV" class="headerlink" title="FOURCC for YUV"></a>FOURCC for YUV</h4><p><a href="http://www.fourcc.org/yuv.php" target="_blank" rel="external">参考官网</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">VC++转换方法：</span><br><span class="line">DWORD fccYUY2 = MAKEFOURCC(<span class="string">'Y'</span>,<span class="string">'U'</span>,<span class="string">'Y'</span>,<span class="string">'2'</span>);</span><br><span class="line">DWORD fccYUY2 = FCC('YUY2');</span><br><span class="line">DWORD fccYUY2 = '2YUY';  // Declares the FOURCC 'YUY2'.</span><br><span class="line"></span><br><span class="line">GUID：</span><br><span class="line">FOURCCMap fccMap(FCC('YUY2'));</span><br><span class="line">GUID g1 = (GUID)fccMap;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Equivalent:</span></span><br><span class="line">GUID g2 = (GUID)FOURCCMap(FCC('YUY2'));</span><br></pre></td></tr></table></figure>
+<h4 id="FOURCC-for-YUV"><a href="#FOURCC-for-YUV" class="headerlink" title="FOURCC for YUV"></a>FOURCC for YUV</h4><p><a href="http://www.fourcc.org/yuv.php" target="_blank" rel="noopener">参考官网</a></p>
 <p><strong>Packed YUV Formats</strong></p>
 <p><img src="http://ooid5jqhw.bkt.clouddn.com/1498808416643.png" alt="Alt text"></p>
 <p><strong>Planar YUV Formats</strong></p>
@@ -444,18 +445,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/03/webrtc/webrtc学习1-全平台编译/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/08/14/webrtc/webrtc学习2-音频预处理模块/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          webrtc学习1-全平台编译
+          webrtc学习2-音频预处理模块
         
       </div>
     </a>
   
   
-    <a href="/2017/08/14/webrtc/webrtc学习2-音频预处理模块/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">webrtc学习2-音频预处理模块</div>
+    <a href="/2017/08/03/webrtc/webrtc学习1-全平台编译/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webrtc学习1-全平台编译</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -612,6 +613,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">音视频</a>
               </li>
              
@@ -620,19 +637,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,19 +649,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">webrtc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
               </li>
             
             <div class="clearfix"></div>
@@ -664,7 +665,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

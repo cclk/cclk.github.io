@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://cclk.cc">
   <title>github+hexo搭建个人博客 | cclk的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,8 +15,9 @@
 <meta property="og:url" content="http://cclk.cc/2015/04/13/common/github_hexo/index.html">
 <meta property="og:site_name" content="cclk的博客">
 <meta property="og:description" content="前言使用github创建的博客是属于静态网站博客，也就是把写好的文章生成HTML网页，然后上传到github网站，显示的也就是HTML网页，所以加载速度会很快。 安装申请Github申请帐号这里我们就不多讲了，小伙伴们可以点击Github，进入官网进行注册。 创建仓库登录账号后，在Github页面的右上方选择New repository进行仓库的创建。在仓库名字输入框中输入：">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ooid5jqhw.bkt.clouddn.com/hexo.jpg">
-<meta property="og:updated_time" content="2018-03-23T09:16:14.180Z">
+<meta property="og:updated_time" content="2018-09-17T07:13:39.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo搭建个人博客">
 <meta name="twitter:description" content="前言使用github创建的博客是属于静态网站博客，也就是把写好的文章生成HTML网页，然后上传到github网站，显示的也就是HTML网页，所以加载速度会很快。 安装申请Github申请帐号这里我们就不多讲了，小伙伴们可以点击Github，进入官网进行注册。 创建仓库登录账号后，在Github页面的右上方选择New repository进行仓库的创建。在仓库名字输入框中输入：">
@@ -39,7 +40,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -156,7 +157,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-common/github_hexo" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-common/github_hexo" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -178,30 +179,30 @@
       
         <p><img src="http://ooid5jqhw.bkt.clouddn.com/hexo.jpg" alt="avatar"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用github创建的博客是属于静态网站博客，也就是把写好的文章生成HTML网页，然后上传到github网站，显示的也就是HTML网页，所以加载速度会很快。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="申请Github"><a href="#申请Github" class="headerlink" title="申请Github"></a>申请Github</h3><h4 id="申请帐号"><a href="#申请帐号" class="headerlink" title="申请帐号"></a>申请帐号</h4><p>这里我们就不多讲了，小伙伴们可以点击<a href="http://www.github.com/" target="_blank" rel="external">Github</a>，进入官网进行注册。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="申请Github"><a href="#申请Github" class="headerlink" title="申请Github"></a>申请Github</h3><h4 id="申请帐号"><a href="#申请帐号" class="headerlink" title="申请帐号"></a>申请帐号</h4><p>这里我们就不多讲了，小伙伴们可以点击<a href="http://www.github.com/" target="_blank" rel="noopener">Github</a>，进入官网进行注册。</p>
 <h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>登录账号后，在Github页面的右上方选择New repository进行仓库的创建。<br>在仓库名字输入框中输入：</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">你想要的名字.github.io</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你想要的名字.github.io</span><br></pre></td></tr></table></figure>
 <p>然后点击Create repository即可。</p>
-<h4 id="生成添加秘钥"><a href="#生成添加秘钥" class="headerlink" title="生成添加秘钥"></a>生成添加秘钥</h4><p>在终端（Terminal）输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot;</div></pre></td></tr></table></figure></p>
-<p>一路enter过来就好，待秘钥生成完毕，会得到两个文件id_rsa和id_rsa.pub，用带格式的记事本打开id_rsa.pub，Ctrl + A复制里面的所有内容，然后进入<a href="https://github.com/settings/ssh" target="_blank" rel="external">github-ssh</a>将复制的内容粘贴到Key的输入框，随便写好Title里面的内容，点击Add SSH key按钮即可。</p>
+<h4 id="生成添加秘钥"><a href="#生成添加秘钥" class="headerlink" title="生成添加秘钥"></a>生成添加秘钥</h4><p>在终端（Terminal）输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot;</span><br></pre></td></tr></table></figure></p>
+<p>一路enter过来就好，待秘钥生成完毕，会得到两个文件id_rsa和id_rsa.pub，用带格式的记事本打开id_rsa.pub，Ctrl + A复制里面的所有内容，然后进入<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">github-ssh</a>将复制的内容粘贴到Key的输入框，随便写好Title里面的内容，点击Add SSH key按钮即可。</p>
 <h3 id="申请域名（非必须）"><a href="#申请域名（非必须）" class="headerlink" title="申请域名（非必须）"></a>申请域名（非必须）</h3><p>为了方便用其他域名访问blog，也可以使用默认的名字，如xxx.github.io也可以访问。</p>
-<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>作用：把本地的hexo内容提交到github上去。<br><a href="https://git-scm.com/downloads" target="_blank" rel="external">Git官网</a>下载相应平台的最新版本，一路安装即可。<br><a href="Git的下载与安装">Git的下载与安装</a></p>
-<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>作用：用来生成静态页面的<br><a href="https://nodejs.org/" target="_blank" rel="external">Node.js官网</a>下载相应平台的最新版本，一路安装即可。<br><a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">Node.js 安装配置</a></p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> d:/hexo</div><div class="line">$ npm install hexo-cli -g</div><div class="line">$ hexo init blog</div><div class="line">$ <span class="built_in">cd</span> blog</div><div class="line">$ npm install</div><div class="line">$ hexo g <span class="comment"># 或者hexo generate</span></div><div class="line">$ hexo s <span class="comment"># 或者hexo server，可以在http://localhost:4000/ 查看</span></div></pre></td></tr></table></figure>
-<h4 id="修改网站相关信息"><a href="#修改网站相关信息" class="headerlink" title="修改网站相关信息"></a>修改网站相关信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: inerdstack</div><div class="line">subtitle: the stack of it nerds</div><div class="line">description: start from zero</div><div class="line">author: inerdstack</div><div class="line">language: zh-CN</div><div class="line">timezone: Asia/Shanghai</div></pre></td></tr></table></figure>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>作用：把本地的hexo内容提交到github上去。<br><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git官网</a>下载相应平台的最新版本，一路安装即可。<br><a href="Git的下载与安装">Git的下载与安装</a></p>
+<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>作用：用来生成静态页面的<br><a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js官网</a>下载相应平台的最新版本，一路安装即可。<br><a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">Node.js 安装配置</a></p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo</span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo g <span class="comment"># 或者hexo generate</span></span><br><span class="line">$ hexo s <span class="comment"># 或者hexo server，可以在http://localhost:4000/ 查看</span></span><br></pre></td></tr></table></figure>
+<h4 id="修改网站相关信息"><a href="#修改网站相关信息" class="headerlink" title="修改网站相关信息"></a>修改网站相关信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: inerdstack</span><br><span class="line">subtitle: the stack of it nerds</span><br><span class="line">description: start from zero</span><br><span class="line">author: inerdstack</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure>
 <p>注意：每一项的填写，其:后面都要保留一个空格，下同。</p>
-<h4 id="配置统一资源定位符（个人域名）"><a href="#配置统一资源定位符（个人域名）" class="headerlink" title="配置统一资源定位符（个人域名）"></a>配置统一资源定位符（个人域名）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">url: http://cclk.cc</div></pre></td></tr></table></figure>
-<h4 id="部署配置"><a href="#部署配置" class="headerlink" title="部署配置"></a>部署配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/cclk/cclk.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>然后执行命令（为了hexo支持git）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>每次部署的步骤，可按以下三步来进行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
-<p>一些常用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;postName&quot; #新建文章</div><div class="line">hexo new page &quot;pageName&quot; #新建页面</div><div class="line">hexo generate #生成静态页面至public目录</div><div class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</div><div class="line">hexo s -p 5000 #开启预览访问端口（端口5000）</div><div class="line">hexo deploy #将.deploy目录部署到GitHub</div><div class="line">hexo help # 查看帮助</div><div class="line">hexo version #查看Hexo的版本</div></pre></td></tr></table></figure></p>
+<h4 id="配置统一资源定位符（个人域名）"><a href="#配置统一资源定位符（个人域名）" class="headerlink" title="配置统一资源定位符（个人域名）"></a>配置统一资源定位符（个人域名）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url: http://cclk.cc</span><br></pre></td></tr></table></figure>
+<h4 id="部署配置"><a href="#部署配置" class="headerlink" title="部署配置"></a>部署配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/cclk/cclk.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>然后执行命令（为了hexo支持git）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>每次部署的步骤，可按以下三步来进行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>一些常用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</span><br><span class="line">hexo s -p 5000 #开启预览访问端口（端口5000）</span><br><span class="line">hexo deploy #将.deploy目录部署到GitHub</span><br><span class="line">hexo help # 查看帮助</span><br><span class="line">hexo version #查看Hexo的版本</span><br></pre></td></tr></table></figure></p>
 <h4 id="一些基本路径"><a href="#一些基本路径" class="headerlink" title="一些基本路径"></a>一些基本路径</h4><p>文章在source/_posts, 文章支持Markdown语法，可以使用一些MarkDown渲染工具。如果想修改头像可以直接在主题的_config.yml文件里面修改，友情链接，之类的都在这里。</p>
-<h3 id="安装Hexo主题-yilia"><a href="#安装Hexo主题-yilia" class="headerlink" title="安装Hexo主题-yilia"></a>安装Hexo主题-yilia</h3><p>介绍下hexo的主题<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>,风格布局都很好。</p>
-<h4 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h4><p>在hexo的工作目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd d:/hexo</div><div class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</div></pre></td></tr></table></figure></p>
+<h3 id="安装Hexo主题-yilia"><a href="#安装Hexo主题-yilia" class="headerlink" title="安装Hexo主题-yilia"></a>安装Hexo主题-yilia</h3><p>介绍下hexo的主题<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">yilia</a>,风格布局都很好。</p>
+<h4 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h4><p>在hexo的工作目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd d:/hexo</span><br><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure></p>
 <p>然后打开Hexo文件夹下面的_config.yml文件，修改里面的theme为yilia。<br>可以在themes/yilia内找到_config.yml文件，进行头像等定制。</p>
-<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><p>1、在source文件夹中新建一个CNAME文件（无后缀名），然后用文本编辑器打开，在首行添加你的网站域名，如xxxx.com，注意前面没有 http:// ，(前面可以加www，就可以用www.xxx.com访问)，然后使用hexo g &amp;&amp; hexo d上传部署。<br>2、在域名解析提供商<br>    （1）先添加一个CNAME，主机记录写@，后面记录值写上你的xxxx.github.io<br>    （2）再添加一个CNAME，主机记录写www，后面记录值也是xxxx.github.io<br>这样别人用www和不用www都能访问你的网站（其实www的方式，会先解析成 <a href="http://xxxx.github.io" target="_blank" rel="external">http://xxxx.github.io</a> 然后根据CNAME再变成 <a href="http://xxx.com" target="_blank" rel="external">http://xxx.com</a> 即中间是经过一次转换的）。上面，我们用的是CNAME别名记录，也有人使用A记录，后面的记录值是写github page里面的ip地址，但有时候IP地址会更改，导致最后解析不正确，所以还是推荐用CNAME别名记录要好些，不建议用IP。<br>3、等十分钟左右，刷新浏览器，用你自己域名访问下试试</p>
-<h3 id="npm速度慢的问题"><a href="#npm速度慢的问题" class="headerlink" title="npm速度慢的问题"></a>npm速度慢的问题</h3><p>可以使用国内的npm镜像，如<a href="https://npm.taobao.org/" target="_blank" rel="external">淘宝npm</a></p>
+<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><p>1、在source文件夹中新建一个CNAME文件（无后缀名），然后用文本编辑器打开，在首行添加你的网站域名，如xxxx.com，注意前面没有 http:// ，(前面可以加www，就可以用<a href="http://www.xxx.com访问)，然后使用hexo" target="_blank" rel="noopener">www.xxx.com访问)，然后使用hexo</a> g &amp;&amp; hexo d上传部署。<br>2、在域名解析提供商<br>    （1）先添加一个CNAME，主机记录写@，后面记录值写上你的xxxx.github.io<br>    （2）再添加一个CNAME，主机记录写www，后面记录值也是xxxx.github.io<br>这样别人用www和不用www都能访问你的网站（其实www的方式，会先解析成 <a href="http://xxxx.github.io" target="_blank" rel="noopener">http://xxxx.github.io</a> 然后根据CNAME再变成 <a href="http://xxx.com" target="_blank" rel="noopener">http://xxx.com</a> 即中间是经过一次转换的）。上面，我们用的是CNAME别名记录，也有人使用A记录，后面的记录值是写github page里面的ip地址，但有时候IP地址会更改，导致最后解析不正确，所以还是推荐用CNAME别名记录要好些，不建议用IP。<br>3、等十分钟左右，刷新浏览器，用你自己域名访问下试试</p>
+<h3 id="npm速度慢的问题"><a href="#npm速度慢的问题" class="headerlink" title="npm速度慢的问题"></a>npm速度慢的问题</h3><p>可以使用国内的npm镜像，如<a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝npm</a></p>
 
       
 
@@ -285,11 +286,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2015/05/14/c++/open_source/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">开源协议及常见开源软件使用的协议类型</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2015/05/14/c++/open_source/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          开源协议及常见开源软件使用的协议类型
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -444,6 +449,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">音视频</a>
               </li>
              
@@ -452,19 +473,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高并发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -476,19 +485,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">webrtc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sdk</a>
+                <a href="javascript:void(0)" class="js-tag color4">direct3d</a>
               </li>
             
             <div class="clearfix"></div>
@@ -496,7 +501,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
