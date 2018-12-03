@@ -17,7 +17,7 @@
 <meta property="og:description" content="前言使用github创建的博客是属于静态网站博客，也就是把写好的文章生成HTML网页，然后上传到github网站，显示的也就是HTML网页，所以加载速度会很快。 安装申请Github申请帐号这里我们就不多讲了，小伙伴们可以点击Github，进入官网进行注册。 创建仓库登录账号后，在Github页面的右上方选择New repository进行仓库的创建。在仓库名字输入框中输入：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ooid5jqhw.bkt.clouddn.com/hexo.jpg">
-<meta property="og:updated_time" content="2018-09-17T07:13:39.664Z">
+<meta property="og:updated_time" content="2018-12-03T05:41:39.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo搭建个人博客">
 <meta name="twitter:description" content="前言使用github创建的博客是属于静态网站博客，也就是把写好的文章生成HTML网页，然后上传到github网站，显示的也就是HTML网页，所以加载速度会很快。 安装申请Github申请帐号这里我们就不多讲了，小伙伴们可以点击Github，进入官网进行注册。 创建仓库登录账号后，在Github页面的右上方选择New repository进行仓库的创建。在仓库名字输入框中输入：">
@@ -203,6 +203,7 @@
 <p>然后打开Hexo文件夹下面的_config.yml文件，修改里面的theme为yilia。<br>可以在themes/yilia内找到_config.yml文件，进行头像等定制。</p>
 <h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><p>1、在source文件夹中新建一个CNAME文件（无后缀名），然后用文本编辑器打开，在首行添加你的网站域名，如xxxx.com，注意前面没有 http:// ，(前面可以加www，就可以用<a href="http://www.xxx.com访问)，然后使用hexo" target="_blank" rel="noopener">www.xxx.com访问)，然后使用hexo</a> g &amp;&amp; hexo d上传部署。<br>2、在域名解析提供商<br>    （1）先添加一个CNAME，主机记录写@，后面记录值写上你的xxxx.github.io<br>    （2）再添加一个CNAME，主机记录写www，后面记录值也是xxxx.github.io<br>这样别人用www和不用www都能访问你的网站（其实www的方式，会先解析成 <a href="http://xxxx.github.io" target="_blank" rel="noopener">http://xxxx.github.io</a> 然后根据CNAME再变成 <a href="http://xxx.com" target="_blank" rel="noopener">http://xxx.com</a> 即中间是经过一次转换的）。上面，我们用的是CNAME别名记录，也有人使用A记录，后面的记录值是写github page里面的ip地址，但有时候IP地址会更改，导致最后解析不正确，所以还是推荐用CNAME别名记录要好些，不建议用IP。<br>3、等十分钟左右，刷新浏览器，用你自己域名访问下试试</p>
 <h3 id="npm速度慢的问题"><a href="#npm速度慢的问题" class="headerlink" title="npm速度慢的问题"></a>npm速度慢的问题</h3><p>可以使用国内的npm镜像，如<a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝npm</a></p>
+<h3 id="hexo支持流程图"><a href="#hexo支持流程图" class="headerlink" title="hexo支持流程图"></a>hexo支持流程图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">yarn add hexo-filter-mermaid-diagrams</span><br></pre></td></tr></table></figure>
 
       
 
@@ -319,7 +320,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#申请Github"><span class="toc-number">2.1.</span> <span class="toc-text">申请Github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#申请帐号"><span class="toc-number">2.1.1.</span> <span class="toc-text">申请帐号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建仓库"><span class="toc-number">2.1.2.</span> <span class="toc-text">创建仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成添加秘钥"><span class="toc-number">2.1.3.</span> <span class="toc-text">生成添加秘钥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#申请域名（非必须）"><span class="toc-number">2.2.</span> <span class="toc-text">申请域名（非必须）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装git"><span class="toc-number">2.3.</span> <span class="toc-text">安装git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nodejs"><span class="toc-number">2.4.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hexo"><span class="toc-number">2.5.</span> <span class="toc-text">安装Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-1"><span class="toc-number">2.5.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改网站相关信息"><span class="toc-number">2.5.2.</span> <span class="toc-text">修改网站相关信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置统一资源定位符（个人域名）"><span class="toc-number">2.5.3.</span> <span class="toc-text">配置统一资源定位符（个人域名）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署配置"><span class="toc-number">2.5.4.</span> <span class="toc-text">部署配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署"><span class="toc-number">2.5.5.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一些基本路径"><span class="toc-number">2.5.6.</span> <span class="toc-text">一些基本路径</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hexo主题-yilia"><span class="toc-number">2.6.</span> <span class="toc-text">安装Hexo主题-yilia</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-2"><span class="toc-number">2.6.1.</span> <span class="toc-text">安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定域名"><span class="toc-number">2.7.</span> <span class="toc-text">绑定域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm速度慢的问题"><span class="toc-number">2.8.</span> <span class="toc-text">npm速度慢的问题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#申请Github"><span class="toc-number">2.1.</span> <span class="toc-text">申请Github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#申请帐号"><span class="toc-number">2.1.1.</span> <span class="toc-text">申请帐号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建仓库"><span class="toc-number">2.1.2.</span> <span class="toc-text">创建仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成添加秘钥"><span class="toc-number">2.1.3.</span> <span class="toc-text">生成添加秘钥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#申请域名（非必须）"><span class="toc-number">2.2.</span> <span class="toc-text">申请域名（非必须）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装git"><span class="toc-number">2.3.</span> <span class="toc-text">安装git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nodejs"><span class="toc-number">2.4.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hexo"><span class="toc-number">2.5.</span> <span class="toc-text">安装Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-1"><span class="toc-number">2.5.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改网站相关信息"><span class="toc-number">2.5.2.</span> <span class="toc-text">修改网站相关信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置统一资源定位符（个人域名）"><span class="toc-number">2.5.3.</span> <span class="toc-text">配置统一资源定位符（个人域名）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署配置"><span class="toc-number">2.5.4.</span> <span class="toc-text">部署配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署"><span class="toc-number">2.5.5.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一些基本路径"><span class="toc-number">2.5.6.</span> <span class="toc-text">一些基本路径</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hexo主题-yilia"><span class="toc-number">2.6.</span> <span class="toc-text">安装Hexo主题-yilia</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-2"><span class="toc-number">2.6.1.</span> <span class="toc-text">安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定域名"><span class="toc-number">2.7.</span> <span class="toc-text">绑定域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm速度慢的问题"><span class="toc-number">2.8.</span> <span class="toc-text">npm速度慢的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo支持流程图"><span class="toc-number">2.9.</span> <span class="toc-text">hexo支持流程图</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -449,6 +450,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
@@ -465,15 +474,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,10 +487,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">UML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">

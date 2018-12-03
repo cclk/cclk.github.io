@@ -177,7 +177,12 @@
       
         <h1 id="C-Module日志设计"><a href="#C-Module日志设计" class="headerlink" title="C++ Module日志设计"></a>C++ Module日志设计</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在程序中写日志是一件非常重要，但是很容易被开发人员忽视的地方。C++有挺多的日志库（如glog，log4cpp等），方便开发人员写日志。但一般这种log库考虑的是应用写log的方法。而C++作为轮子的制造者，迫切的需求是有一个轻量级的模块日志，方便开发人员在库内写日志。</p>
 <p>在库内写日志，一般我们使用printf、std::cout等，又或者嵌入一个log模块。当调用者需要按自己的方式写log时，这些常见的方法显得无能为力。如果存在一个log模块专为C++的导出模块设计，那么它应该具有哪些功能呢？</p>
-<h2 id="设计方法"><a href="#设计方法" class="headerlink" title="设计方法"></a>设计方法</h2><h3 id="设计前提"><a href="#设计前提" class="headerlink" title="设计前提"></a>设计前提</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">id1[sub module log]--&gt;id2[module log]</span><br><span class="line">id2--&gt;idm[application]</span><br><span class="line">id3[module log]--&gt;idm</span><br><span class="line">id4[module log]--&gt;idm</span><br></pre></td></tr></table></figure>
+<h2 id="设计方法"><a href="#设计方法" class="headerlink" title="设计方法"></a>设计方法</h2><h3 id="设计前提"><a href="#设计前提" class="headerlink" title="设计前提"></a>设计前提</h3><pre class="mermaid">graph LR
+id1[sub module log]-->id2[module log]
+id2-->idm[application]
+id3[module log]-->idm
+id4[module log]-->idm</pre>
+
 <p>Module内写日志，一般有以下几个问题需要考虑：</p>
 <ul>
 <li><strong>不依赖具体log落地实现</strong>：如可以自定义输出到文件、输出到日志采集系统、输出到syslog等；还可定义如需要输出哪些log级别、插入一些traceID等；自定义输出log的格式等。</li>
@@ -459,6 +464,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
@@ -475,15 +488,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">音视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,10 +501,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">UML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
